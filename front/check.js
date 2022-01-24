@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const Http = new XMLHttpRequest();
         Http.open("PUT", url, true);
         //Http.setRequestHeader('Content-type' ,'application/json');
-        //Http.setRequestHeader('Access-Control-Allow-Origin', '*');
+        Http.setRequestHeader('Access-Control-Allow-Origin', '*');
          
         var response = "resp";
         //function hand () {
