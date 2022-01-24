@@ -19,36 +19,37 @@ document.addEventListener('DOMContentLoaded', function() {
         d = document;
         
         //var text = text_extractor();
-        var text = document.getElementById("article").value;
-        console.log(text);
-        var query = "text=";
         var f = d.createElement('form');
+
         var url = 'https://fakenews-pnw-app.herokuapp.com/predict';
+        var text = document.getElementById("article").value;       
+        var query = "text=";
         query = query.concat(text);
-        //url = url.concat("?", query);
+        url = url.concat("?", query);
         console.log(url);
-        const Http = new XMLHttpRequest();
-        Http.open("PUT", url, true);
+        //const Http = new XMLHttpRequest();
+        //Http.open("PUT", url, true);
         //Http.setRequestHeader('Content-type' ,'application/json');
-        Http.setRequestHeader('Access-Control-Allow-Origin', '*');
+        //Http.setRequestHeader('Access-Control-Allow-Origin', '*');
          
         var response = "resp";
         //function hand () {
          // console.log(this.getResponseHeader('content-type'));
         //}
         //Http.onreadystatechange = hand;
-        Http.onreadystatechange = (e) => {
-          console.log("siema")
-          console.log(Http.responseText)
-          response = Http.responseText;
-        }
-        Http.send(query); 
+        //Http.onreadystatechange = (e) => {
+          //console.log("siema")
+          //console.log(Http.responseText)
+          //response = Http.responseText;
+        //}
+        //Http.send(query); 
         //fetch(url)
         //.then(response => response.json())
         //.then(data => console.log(data));
         //console.log(response)
-        //response = { "prediction": "0.9"}
-        console.log(response)
+
+        fetch(url, {method: 'PUT', mode: 'cors'})
+          .then(response => response.text())
         const myObj = JSON.parse(response);
         var x = myObj["prediction"];
         console.log(x);
