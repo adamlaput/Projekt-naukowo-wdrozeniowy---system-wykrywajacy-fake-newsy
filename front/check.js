@@ -1,16 +1,3 @@
-function text_extractor(document) {
-  var bodyScripts = document.querySelectorAll("body script");
-  for(var i=0; i<bodyScripts.length; i++){
-      bodyScripts[i].remove();
-  }
-  var str = document.body.textContent;
-  //str = str.replace(/\s/g, "");
-  str = str.replace(/(\r\n|\n|\r)/gm, "");
-  str = str.replace(/\s\s+/g, ' ');
-  //document.body.innerHTML = '<pre>'+str+'</pre>'; //do testow - odkomentowac
-  return str;
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     var checkPageButton = document.getElementById('checkPage');
     checkPageButton.addEventListener('click', function() {
@@ -18,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
       chrome.tabs.getSelected(null, function(tab) {
         d = document;
         
-        //var text = text_extractor();
         var f = d.createElement('form');
 
         var url = 'https://fakenews-pnw-app.herokuapp.com/predict';
@@ -33,12 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         Http.open("PUT", url, true);
         Http.setRequestHeader('Content-type' ,'application/x-www-form-urlencoded');
         Http.setRequestHeader('Access-Control-Allow-Origin', '*');
-         
-        
-        //function hand () {
-         // console.log(this.getResponseHeader('content-type'));
-        //}
-        //Http.onreadystatechange = hand;
+
         Http.onreadystatechange = (e) => {
           console.log(Http.responseText)
         }
@@ -54,24 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
           var element = document.getElementById("probability");
           element.textContent = pred;
           
-          // do something with jsonResponse
        };
         Http.send(query);
-        
-        //fetch(url)
-        //.then(response => response.json())
-        //.then(data => console.log(data));
-        //console.log(response)
-
-        /*fetch(url, {method: 'PUT', 
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-        })
-          .then(response => response.text())
-        */
-
         
       });
     }, false);
