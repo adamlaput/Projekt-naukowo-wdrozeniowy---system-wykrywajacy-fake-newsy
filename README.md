@@ -3,5 +3,3 @@ Repozytorium zwiera prototyp systemu wykrywającego fake newsy w postaci wtyczki
 Na podstawie wprowadzonych wcześniej szczególnych fraz oraz ich połączeń, 
 system ma za zadanie analizę tekstu oraz poinformowanie użytkownika, 
 gdy prawdopodobnie na jego ekranie pojawiła się fałszywa informacja.
-
-Prototyp tworzony w ramach kursu "Projekt naukowo-wdrożeniowy 2".
