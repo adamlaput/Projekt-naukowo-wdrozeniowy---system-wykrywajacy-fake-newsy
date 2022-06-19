@@ -5,13 +5,35 @@
     <script src="check.js"></script>
     <script src="text_extractor.js"></script>
   </head>
-  <body>
-    <h1>FakeNews Analyzer</h1>
-    <h1>Paste Article text below</h1>
+  <body style="display: flex; align-items: center;justify-content: center; flex-direction: column; background-color: rgb(194, 239, 198);">
+    <h1 style="font-size: 1em;">FakeNews Analyzer</h1>
+    <h1 style="font-size: 1em;">Paste Article text below</h1>
     <form>
-      <input type="text" id="article" name="article"><br>
+      <input type="text" id="article" name="article" style=" border:none;
+     padding: 6px;
+     font-size: 16px;
+     border-width: 0px;
+     border-color: #CCCCCC;
+     background-color: #FFFFFF;
+     color: #000000;
+     border-style: solid;
+     border-radius: 8px;
+     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 5px rgba(66,66,66,.75);"><br>
     </form>
-    <p id="probability">Probability</p>
-    <button id="checkPage">Identify FakeNews!</button>
+    <p id="probability" style="font-size: 1em; font-weight: bold;">Probability</p>
+    <button id="checkPage"  style="background-color: #4CAF50; background-color:#44c767;
+    border-radius:28px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:1em;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;">Identify FakeNews!</button>
+
+    <a style="color:blue;" href="https://drive.google.com/file/d/1t9vBuRqm2_Who6cdxXsjnjqmjBqlu56W/view?usp=sharing" onclick="window.open('https\://drive.google.com/file/d/1t9vBuRqm2_Who6cdxXsjnjqmjBqlu56W/view?usp=sharing')">User Manual</a>
   </body>
 </html>
